@@ -1,0 +1,9 @@
+.card{
+    width: 100vw;
+    height: 500px;
+    background-color: orangered;
+  
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
