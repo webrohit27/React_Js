@@ -4,7 +4,8 @@
     align-items: center;
     margin: 10px;
     
-    background-color: aquamarine;
+    background-color: #FF6F91;
     width: 100vw;
-    height: 10vw;
+    height: 10vh;
+    border-radius: 5px solid black;
 }

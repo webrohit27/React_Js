@@ -3,8 +3,8 @@ import './Card.css'
 
 const Card = () => {
   return (
-    <div className='outer-container'>Card
-    <div className='inner-container'></div>
+    <div className='outer-container'>
+    <div className='inner-container'>Card</div>
     </div>
   )
 }
