@@ -1,0 +1,25 @@
+.sidebar{
+    height: 80vh;
+    width: 18vw;
+    background-color: whitesmoke;
+}
+
+.sidebar-item-div{
+    height: 50px;
+    width: 100%;
+    background-color: rgba(121, 231, 231, 0.753);
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.sidebar-item-div:hover{
+background-color: rgb(12, 163, 163);
+}
+
+.sidebar-item{
+    font-size: 18px;
+    margin-left: 25px;
+}
