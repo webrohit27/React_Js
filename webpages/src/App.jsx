@@ -2,20 +2,25 @@ import Navbar from './components/Navbar';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import { useState } from 'react';
+import Main from "./components/Main";
 
 function App(){
 
-let [name, setName] = useState()
+let [name, setName] = useState("Ramesh");
 
-let name = "Rohit";
 function handleClick(){
- 
+   setName('Suresh');
 }
   return(
 
     <div> 
        <Navbar />
-       <Sidebar />
+      <div className='Sidebar-Main-Container'>
+
+        <Sidebar  fun = {handleClick}/>
+
+        <Main heading = {name}/>
+      </div> 
     </div>
   );
 }

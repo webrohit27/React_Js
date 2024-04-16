@@ -1,0 +1,7 @@
+.Main-container{
+    height: 80vh;
+    width: 60vw;
+    background-color: aliceblue;
+     display: flex;
+     justify-content: center;
+}
