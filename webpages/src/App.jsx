@@ -6,10 +6,14 @@ import Main from "./components/Main";
 
 function App(){
 
-let [name, setName] = useState("Ramesh");
+let [title, setTitle ] = useState("Home");
+let [content, setContent] = useState("What is React ?")
 
 function handleClick(){
-   setName('Suresh');
+  setTitle("Introduction");
+  setContent("React is a JavaScript library for building user interfaces.");
+  
+   
 }
   return(
 
@@ -19,7 +23,7 @@ function handleClick(){
 
         <Sidebar  fun = {handleClick}/>
 
-        <Main heading = {name}/>
+        <Main title = {title} content = {content} />
       </div> 
     </div>
   );

@@ -1,7 +1,15 @@
 .Main-container{
     height: 80vh;
     width: 60vw;
-    background-color: aliceblue;
-     display: flex;
-     justify-content: center;
+    background-color: rgb(99, 236, 211);
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+
+}
+
+.content-div{
+    height: 25vh;
+    width: 80%;
+    background-color: rgb(136, 181, 166);
 }
