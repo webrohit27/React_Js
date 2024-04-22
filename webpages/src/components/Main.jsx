@@ -3,11 +3,9 @@ import "./Main.css";
 function Main(props){
    return(
     <div className="Main-container">
-        <h2> {props.heading} </h2>
+        <h2> {props.title} </h2>
         <div className="content-div">
-         <p> {props.content} </p>
-
-
+         <p className="content-info"> {props.content} </p>
 
         </div>
 

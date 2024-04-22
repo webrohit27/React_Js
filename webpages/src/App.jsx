@@ -3,17 +3,18 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import { useState } from 'react';
 import Main from "./components/Main";
+import { titles } from './Data';
+import { contents } from './Data';
 
 function App(){
 
-let [title, setTitle ] = useState("Home");
-let [content, setContent] = useState("What is React ?")
+let [title, setTitle] = useState("Home");
+let [content, setContent] = useState("What is React ?");
 
-function handleClick(){
-  setTitle("Introduction");
-  setContent("React is a JavaScript library for building user interfaces.");
+function handleClick(idx){
+ setTitle(titles[idx]);
+ setContent(contents[idx])
   
-   
 }
   return(
 
@@ -21,7 +22,7 @@ function handleClick(){
        <Navbar />
       <div className='Sidebar-Main-Container'>
 
-        <Sidebar  fun = {handleClick}/>
+        <Sidebar  handleClick = {handleClick}/>
 
         <Main title = {title} content = {content} />
       </div> 

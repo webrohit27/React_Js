@@ -1,0 +1,19 @@
+h1{
+    color: blueviolet;
+}
+
+.ans-div {
+    width: 80%;
+
+}
+
+.code-div-container{
+    width: 90%;
+    background-color: aqua;
+    padding: 20px;
+}
+
+.code-div{
+    padding: 10px;
+    background-color: whitesmoke;
+}
