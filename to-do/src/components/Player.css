@@ -1,0 +1,20 @@
+.Player-container{
+    height: 50%;
+    width: 45%;
+    background-color: rgb(201, 72, 72);
+   
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+input{
+    height: 60%;
+    width: 50%;
+}
+
+button{
+    height: 50%;
+    width: 25%;
+}
+
