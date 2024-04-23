@@ -1,27 +1,33 @@
 import React, { useState } from 'react';
 import "./Player.css";
 
-const Player = (props) => {
+let Player = (props) => {
  // Corrected the useState declaration
- const [buttonValue, setButtonValue] = useState('Edit');
+ let[isEditing, setIsEditing] = useState(false);
 
- function handleClick() {
-    console.log('clicked');
-    if (buttonValue === "Edit") {
-      setButtonValue("Save");
-    } else {
-      setButtonValue("Edit");
+    function handleClick() {
+        if(isEditing == true) {
+            setIsEditing(false);
+        }
+        else{
+            setIsEditing(true);
+        }
     }
- }
 
  // Corrected the return statement to properly return JSX
+// isEditing ek useState wala variable hai
+    // initially isEditing = "false"
+    // click karne par--> handleClick function call hoga --> false ka true kar dega
+    // Jaise hi useState wala koi bhi variable ki value change hoti hai toh component wapas render hota hai
+
  return (
-    <div className='Player-container'>
-      <input type="text" value={props.playerName} readOnly />
+  <div className="Player-container">
+        
       <span> X </span>
-      <button onClick={handleClick}>{buttonValue}</button>
-    </div>
- );
+  
+      <button onClick={handleClick}> { isEditing? "Save" : "Edit" } </button>
+  </div>
+);
 }
 
 export default Player;
