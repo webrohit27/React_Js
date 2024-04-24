@@ -3,9 +3,16 @@ import "./Player.css";
 
 let Player = (props) => {
  // Corrected the useState declaration
- let[isEditing, setIsEditing] = useState(false);
+ let [playerName, setPlayerName] = useState('');
+ let [isEditing, setIsEditing] = useState(false);
+
+
+     function handleChange(event) {
+      setPlayerName(event.target.value);
+     }
 
     function handleClick() {
+
         if(isEditing == true) {
             setIsEditing(false);
         }
@@ -14,14 +21,23 @@ let Player = (props) => {
         }
     }
 
+    let editablePlayerName = <span className='player-name'> {playerName} </span>
+
+    if (isEditing == true) {
+      editablePlayerName = 
+            <input type='text' required onChange={handleChange}></input>
+    }
+  
+
  // Corrected the return statement to properly return JSX
 // isEditing ek useState wala variable hai
     // initially isEditing = "false"
     // click karne par--> handleClick function call hoga --> false ka true kar dega
-    // Jaise hi useState wala koi bhi variable ki value change hoti hai toh component wapas render hota hai
+    // Jaise hi useState wala koi bhi variable ki value change hoti hai toh component wapas render hota hai 
 
  return (
-  <div className="Player-container">
+  <div className="Player-container"> 
+     {editablePlayerName}
         
       <span> X </span>
   
