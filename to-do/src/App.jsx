@@ -2,6 +2,7 @@
 import './App.css';
 import logo from './Images/logo.png';
 import Player from './components/Player';
+import Game_board from './components/Game_board';
 
 function App() {
   return (
@@ -18,12 +19,13 @@ function App() {
    <div className='Main-section'>
       
       <div className='Game-container'>
-         <div className='player-section'>
-               <Player playerName="Player1"/>
-               <Player playerName="Player2"/>
-         </div>
+      <div className='player-section'>
+                        <Player name="Player1" symbol="X"/>
+                        <Player name="Player2" symbol="O"/>
+      </div>
 
      <div className='game-section'>
+        <Game_board />
 
      </div>
 

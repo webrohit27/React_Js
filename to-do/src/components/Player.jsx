@@ -3,7 +3,7 @@ import "./Player.css";
 
 let Player = (props) => {
  // Corrected the useState declaration
- let [playerName, setPlayerName] = useState('');
+ let[playerName, setPlayerName] = useState(props.name);
  let [isEditing, setIsEditing] = useState(false);
 
 
@@ -39,7 +39,7 @@ let Player = (props) => {
   <div className="Player-container"> 
      {editablePlayerName}
         
-      <span> X </span>
+      <span className='symbol'> {props.symbol} </span>
   
       <button onClick={handleClick}> { isEditing? "Save" : "Edit" } </button>
   </div>

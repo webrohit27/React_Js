@@ -27,3 +27,15 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+/* Game Section */
+
+.game-section{
+  height: 350px;
+  width: 100%;
+  border-radius: 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
