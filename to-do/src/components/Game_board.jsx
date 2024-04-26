@@ -11,9 +11,9 @@ let GameBoard = [
 
 
 let [turn, setTurn] = useState("X");
-let [symbol, setSymbol] = useState("");
+let [symbol, setSymbol] = useState(""); 
 
-  function handleClick(event, row_idx, col_idx){
+  function handleClick(event, row_idx, col_idx){    // for calling function
    
    GameBoard[row_idx][col_idx] = turn =='X'? 'X': 'O';
 
