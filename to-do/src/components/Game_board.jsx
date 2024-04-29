@@ -48,33 +48,36 @@ let [winner, setWinner] = useState(false);
 
 
    function checkWinner() {
+      // check winner for rows
       for (let i = 0; i < 3; i++) {
          if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0]!=null) {
             console.log("Winner");
             setWinner(true);
          
       }
+   }
+      // check winner for column
       for (let j = 0; j < 3; j++) {
          if (GameBoard[0][j] == GameBoard[1][j] && GameBoard[1][j] == GameBoard[2][j] && GameBoard[0][j]!=null) {
             console.log("Winner");
             setWinner(true);
          
       }
+   }
       
-
-      else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[0][0]!=null) {
+     // check Winner for diagonal One
+       if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[0][0]!=null) {
          console.log("Winner");
          setWinner(true);
       }
 
+      // check Winner for diagonal Two
       else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[0][2]!=null) {
          console.log("Winner");
          setWinner(true);
       }
-
-      
-
    }
+
 
 
    return (
@@ -93,10 +96,7 @@ let [winner, setWinner] = useState(false);
             })
          } 
 
-      </div>
-
-
-       
+      </div>    
   )
 } 
 
