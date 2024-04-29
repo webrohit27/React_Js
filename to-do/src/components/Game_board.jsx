@@ -13,23 +13,28 @@ let [GameBoard, setGameBoard] = useState([
 
 let [turn, setTurn] = useState("X");
 let [symbol, setSymbol] = useState(""); 
+let [winner, setWinner] = useState(false);
 
   function handleClick(event, row_idx, col_idx){   
    
-   let NewGameboard = [...GameBoard];
+  if (GameBoard[row_idx][col_idx] == null && winner!=true) {
    
+   // updating Gameboard
+   let NewGameboard = [...GameBoard];
    NewGameboard[row_idx][col_idx] = turn =='X'? 'X': 'O';
-
    setGameBoard(NewGameboard);
 
-   console.log(GameBoard);
-
+   // upadating UI
    event.target.innerText= turn;
    
+   // Changing turn
    turn=="X"? setTurn('O') : setTurn('X');
 
+   // checking Winner
    checkWinner();
 
+   
+  }
 
    // if (turn =="X") {
    //    event.target.innertText = 'X';
@@ -43,42 +48,34 @@ let [symbol, setSymbol] = useState("");
 
 
    function checkWinner() {
-      if (GameBoard[0][0] == GameBoard[0][1] && GameBoard[0][1] == GameBoard[0][2] && GameBoard[0][0]!=null) {
-         console.log("Winner");
+      for (let i = 0; i < 3; i++) {
+         if (GameBoard[i][0] == GameBoard[i][1] && GameBoard[i][1] == GameBoard[i][2] && GameBoard[i][0]!=null) {
+            console.log("Winner");
+            setWinner(true);
+         
       }
-      else if (GameBoard[1][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[1][2] && GameBoard[1][0]!=null) {
-         console.log("Winner");
+      for (let j = 0; j < 3; j++) {
+         if (GameBoard[0][j] == GameBoard[1][j] && GameBoard[1][j] == GameBoard[2][j] && GameBoard[0][j]!=null) {
+            console.log("Winner");
+            setWinner(true);
+         
       }
-
-      else if (GameBoard[2][0] == GameBoard[2][1] && GameBoard[2][2] == GameBoard[2][2] && GameBoard[2][0]!=null) {
-         console.log("Winner");
-      }
-
-      else if (GameBoard[0][0] == GameBoard[1][0] && GameBoard[1][0] == GameBoard[2][0] && GameBoard[0][0]!=null) {
-         console.log("Winner");
-      }
-
-      else if (GameBoard[0][1] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][1] && GameBoard[0][1]!=null) {
-         console.log("Winner");
-      }
-
-      else if (GameBoard[0][2] == GameBoard[1][2] && GameBoard[1][2] == GameBoard[2][2] && GameBoard[0][2]!=null) {
-         console.log("Winner");
-      }
+      
 
       else if (GameBoard[0][0] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][2] && GameBoard[0][0]!=null) {
          console.log("Winner");
+         setWinner(true);
       }
 
       else if (GameBoard[0][2] == GameBoard[1][1] && GameBoard[1][1] == GameBoard[2][0] && GameBoard[0][2]!=null) {
          console.log("Winner");
+         setWinner(true);
       }
 
       
 
    }
 
- 
 
    return (
       <div className='game-board'>
@@ -103,8 +100,4 @@ let [symbol, setSymbol] = useState("");
   )
 } 
 
-
-
-
-
-export default Game_board
+export default Game_board;
