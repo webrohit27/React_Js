@@ -13,7 +13,11 @@ function Game_Board(){
     let[turn, setTurn] = useState("X");
     let[symbol, setSymbol] = useState("");
     let[winner, setWinner] = useState(false);
-    let[winnerSymbol, setWinnerSymbol] = useState(null); // winnerSymbol✏️
+    let[winnerSymbol, setWinnerSymbol] = useState(null); // winnerSymbol
+
+    let[conclusion, setConclusion] = useState(null);
+    let gameResult = null;
+
     
     function handleClick(event, row_idx, col_idx){
 
@@ -66,24 +70,46 @@ function Game_Board(){
             setWinner(true);
             setWinnerSymbol(GameBoard[0][2]);
         }
-    }
 
+        //Checking for draw
+        let bulb = false;
+        GameBoard.map((row)=>{
+            row.map((element)=>{
+                if(element == null) {
+                    bulb = true;
+                }
+            })
+        })
+
+        if(bulb == false && winner ==false) {
+            setConclusion("Draw");
+        }   
+        
+    }
   
-    let winnerName = null;
+  
+    let gameWinner;
 
     if(winner == true) {
         if(winnerSymbol=="X") {
-            winnerName = <span id="winner-span"> Winner is Player 1</span>
+            gameWinner = "Player 1";
         }
-        else {
-            winnerName = <span id="winner-span"> Winner is Player 2</span>
+        else if(winnerSymbol == "O"){
+            gameWinner = "Player 2";
         }
+
+        gameResult = <span id="winner-span"> Winner is {gameWinner} </span>
+    }
+    else {
+        if(conclusion == "Draw") {
+            gameResult = <span id="winner-span"> There is a Draw </span>
+        }   
     }
 
 
     return(
         <div className='game-board-container'>
-            {winnerName}     
+            {gameResult}     
 
             <div className="game-board">   
                 {
