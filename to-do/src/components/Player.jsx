@@ -13,7 +13,8 @@ let Player = (props) => {
 
     function handleClick() {
 
-        if(isEditing == true) {
+        if(isEditing === true) {
+            props.setPlayer(playerName);
             setIsEditing(false);
         }
         else{
@@ -21,11 +22,23 @@ let Player = (props) => {
         }
     }
 
+      function handleKey(event){
+         if (event.key == "Enter") {
+            props.setPlayer(playerName);
+            setIsEditing(false);
+         }
+      }
+
     let editablePlayerName = <span className='player-name'> {playerName} </span>
 
-    if (isEditing == true) {
+    if (isEditing === true) {
       editablePlayerName = 
-            <input type='text' required onChange={handleChange}></input>
+            <input type='text' 
+            required 
+            onChange={handleChange}
+            value={playerName}
+            onKeyDown={handleKey}
+            ></input>
     }
   
 

@@ -1,8 +1,8 @@
 .Player-container{
     height: 50%;
     width: 45%;
-    background-color: rgb(201, 72, 72);
-   
+    background-color: #DCB0FF;
+
     display: flex;
     align-items: center;
     border-radius: 5px;

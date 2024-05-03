@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Game_board.css';
 
-function Game_Board(){
+function Game_Board(props){
 
     let[GameBoard, setGameBoard] = useState([
     //    0     1     2
@@ -90,45 +90,65 @@ function Game_Board(){
   
     let gameWinner;
 
+
     if(winner == true) {
-        if(winnerSymbol=="X") {
-            gameWinner = "Player 1";
+        if(winnerSymbol ==="X") {
+            gameWinner = props.player1;
         }
-        else if(winnerSymbol == "O"){
-            gameWinner = "Player 2";
+        else if(winnerSymbol === "O"){
+            gameWinner = props.player2;
         }
 
         gameResult = <span id="winner-span"> Winner is {gameWinner} </span>
     }
     else {
-        if(conclusion == "Draw") {
+        if(conclusion === "Draw") {
             gameResult = <span id="winner-span"> There is a Draw </span>
         }   
     }
 
+      
+    useEffect(()=>{
+        console.log(GameBoard);
+    }, [GameBoard]);
 
-    return(
+    function handleReset(){
+        setGameBoard([
+            [null, null, null],  //0
+            [null, null, null],  // 1
+            [null, null, null]   // 2
+        ]);
+
+        if (winner == true) {
+            setWinner(false);
+        }
+        if (conclusion=="Draw") {
+            setConclusion("");
+        }
+        setTurn("X");
+    }
+
+
+
+    return (
         <div className='game-board-container'>
-            {gameResult}     
-
-            <div className="game-board">   
-                {
-                    GameBoard.map((row, row_idx)=>{
-                        return (
-                            <div className='row' key={row_idx}> 
-                                {
-                                    row.map((element, col_idx)=>{
-                                        return <button key={col_idx} onClick={(event)=>{ handleClick(event, row_idx, col_idx)}}> </button>
-                                    })
-                                }
-                            </div>
-                        )
-                    })
-                }
-            </div>  
+            {gameResult}
+            <div className="game-board">
+                {GameBoard.map((row, row_idx) => {
+                    return (
+                        <div className='row' key={row_idx}>
+                            {row.map((element, col_idx) => {
+                                return <button key={col_idx} onClick={(event) => { handleClick(event, row_idx, col_idx) }}>{element}</button>;
+                            })}
+                        </div>
+                    );
+                })}
+            </div>
+            <button className='reset-btn' onClick={handleReset}> Reset </button>
+      
         </div>
-        
     );
+
 }
 
 export default Game_Board;
