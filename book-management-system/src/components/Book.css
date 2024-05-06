@@ -1,0 +1,15 @@
+#book-container{
+    height: 10vh;
+    width: 70vw;
+    background-color: aquamarine;
+
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.book-data{
+    padding: 5px;
+    border: 2px solid black;
+}
