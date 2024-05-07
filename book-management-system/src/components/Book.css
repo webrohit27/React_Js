@@ -9,7 +9,36 @@
     justify-content: space-evenly;
 }
 
-.book-data{
-    padding: 5px;
+.book-data {
+    padding: 5px;    
     border: 2px solid black;
+    background-color: chartreuse;
+    height: 60%;
+
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#container-data1 {
+    width: 4%;
+}
+
+#container-data2 {
+    width: 25%;
+}
+
+#container-data3 {
+    width: 20%;
+}
+
+#container-data4 {
+    width: 8%;
+}
+
+#remove-btn{
+    height: 40%;
+    width: 7%;
+    background-color: red;
+    color: white;
 }

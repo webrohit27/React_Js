@@ -1,14 +1,18 @@
 import { Fragment } from "react";
 import "./Book.css";
 
-function Book() {
+function Book(props){
+    
+
     return(
-       <div id="book-container">
-        <span className="book-data"> id</span>
-        <span className="book-data"> title</span>
-        <span className="book-data"> author</span>
-        <span className="book-data"> price</span>
-       </div>
+        <div id="book-container">
+            <span id="container-data1" className="book-data"> {props.id} </span>
+            <span id="container-data2" className="book-data"> {props.title} </span>
+            <span id="container-data3" className="book-data"> {props.author}  </span>
+            <span id="container-data4" className="book-data"> {props.price} </span>
+             
+             <button id="remove-btn" onClick={()=>{props.handleRemove(props.id)}}>Remove</button>
+        </div>
     );
 }
 
