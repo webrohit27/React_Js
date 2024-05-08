@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import "./Book.css";
 
@@ -12,10 +11,10 @@ function Book(props){
 
      function handleUpdate(event){
         event.preventDefault();
-        setIdContent(<input type="number" id="input-data1" className="input-data"></input>);
+        setIdContent(<input type="text" id="input-data1" className="input-data"></input>);
         setTitleContent(<input type="text" id="input-data2" className="input-data"></input>);
         setAuthorContent(<input type="text" id="input-data3" className="input-data"></input>);
-        setPriceContent(<input type="number" id="input-data4" className="input-data"></input>);
+        setPriceContent(<input type="text" id="input-data4" className="input-data"></input>);
      }
     return(
         <div id="book-container">
