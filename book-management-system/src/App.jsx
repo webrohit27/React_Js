@@ -8,10 +8,10 @@ import AddBook from './components/AddBook';
 
 function App(){
 
-  let[id, setId] = useState("");
-  let[title, setTitle] = useState("");
-  let[author, setAuthor] = useState("");
-  let[price, setPrice] = useState("");
+  let[enterId, setEnterId] = useState("");
+  let[enterTitle, setEnterTitle] = useState("");
+  let[enterAuthor, setEnterAuthor] = useState("");
+  let[enterPrice, setEnterPrice] = useState("");
 
 
   let [books, setBooks] = useState(
@@ -58,18 +58,29 @@ function App(){
   }
 
 
-  function handleSubmit(){
-    
+  function handleSubmit(event){
+     event.preventDefault();
+
+     let book = {
+                  id: enterId,
+                  title: enterTitle,
+                  author: enterAuthor,
+                  price: enterPrice
+     }
+     let newBooks = [...books];
+     newBooks.push(book);
+
+     setBooks(newBooks);
   }
 
   return(
     
     <div id='main-container'>
     <AddBook handleSubmit={handleSubmit} 
-             setId={setId}
-             setTitle={setTitle}
-             setAuthor={setAuthor}
-             setPrice={setPrice}    
+             setEnterId={setEnterId}
+             setEnterTitle={setEnterTitle}
+             setEnterAuthor={setEnterAuthor}
+             setEnterPrice={setEnterPrice}    
     />     
 
    {

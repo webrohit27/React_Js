@@ -36,9 +36,17 @@
     width: 8%;
 }
 
-#remove-btn{
+.btn{
     height: 40%;
-    width: 7%;
-    background-color: red;
-    color: white;
+    width: 7%; 
+    color: black;
 }
+
+#remove-btn{
+    background-color: rgb(233, 9, 9);
+}
+
+#update-btn{
+    background-color: rgb(193, 57, 180);
+}
+
