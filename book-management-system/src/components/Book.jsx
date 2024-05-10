@@ -81,7 +81,7 @@ function Book(props){
 
 
             {
-                isUpdating?
+                isUpdating ?
                     <input
                         type="text"
                         id="input-data2"
