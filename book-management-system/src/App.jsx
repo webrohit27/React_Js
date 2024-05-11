@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Book from "./components/Book";
 import "./App.css";
 import AddBook from './components/AddBook';
+import Navbar from './components/Navbar';
 
 
 
@@ -74,8 +75,11 @@ function App(){
   }
 
   return(
-    
+   
     <div id='main-container'>
+     
+     <Navbar />
+
     <AddBook handleSubmit={handleSubmit} 
              setEnterId={setEnterId}
              setEnterTitle={setEnterTitle}

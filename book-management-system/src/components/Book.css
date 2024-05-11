@@ -2,8 +2,7 @@
     height: 10vh;
     width: 70vw;
     background-color: #4D869C;
-
-    border: 2px solid black;
+    border: 2px solid rgb(37, 78, 78);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -13,7 +12,7 @@
 
 .book-data {
     padding: 5px;    
-    border: 2px solid black;
+    border: 2px solid rgb(37, 78, 78);
     background-color: #7AB2B2;
     height: 60%;
 

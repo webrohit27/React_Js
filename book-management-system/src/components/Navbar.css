@@ -1,0 +1,31 @@
+
+
+
+.header{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px; /* Space between the header and the navigation list */
+
+}
+
+.line{
+    border-top: 2px solid #000;
+    margin: 0 auto; /* Center the line */
+    width: 80%; /* Adjust the width as needed */
+}
+
+.nav-section {
+    list-style-type: none; /* Remove default list styling */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-around; /* Evenly distribute space between items */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .nav-section li {
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .nav-section li:hover {
+    color: #ddd; /* Lighten the text color on hover */
+  }
