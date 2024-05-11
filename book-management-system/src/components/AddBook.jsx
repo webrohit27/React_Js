@@ -33,7 +33,7 @@ function AddBook(props) {
        Author:<input type='text' id='id' onChange={handleChangeAuthor}/>
        Price:<input type='text' id='id' onChange={handleChangePrice}/>
 
-       <input type="submit" value="add" id="add-btn" />
+       <input type="submit" value="Add" id="add-btn" />
 
 
 

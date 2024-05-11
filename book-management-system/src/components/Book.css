@@ -44,11 +44,15 @@
 }
 
 #remove-btn{
-    background-color: rgb(233, 9, 9);
+    background-color: #3C5B6F;
+    color: #3e0404;
+    border-radius: 5px;
 }
 
 #update-btn{
-    background-color: rgb(193, 57, 180);
+    background-color: #3C5B6F;
+    color: #3e0404;
+    border-radius: 5px;
 }
 
 

@@ -20,30 +20,30 @@ function App(){
    [
       {
         id: 1,
-        title: "Desi",
-        author: "Nikhil deshkar",
-        price: 11
+        title: "Family Matters",
+        author: "Rohinton Mistry",
+        price: 125
       },
      
       {
         id: 2,
-        title: "Rich dad poor Dad",
-        author: "Robert Kiyoski",
-        price: 111
+        title: " A Suitable Boy",
+        author: "Vikram Seth",
+        price: 108
       },
     
       {
         id: 3,
         title: "Harry Potter",
         author: "J. K. Rowling",
-        price: 15
+        price: 180
       },
     
       {
         id: 4,
         title: "Learning How to Fly",
         author: "Abdul Kalam",
-        price: 12
+        price: 199
       },
     ]
   );
