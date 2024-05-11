@@ -3,6 +3,7 @@
     width: 70vw;
     background-color: #4D869C;
     border: 2px solid rgb(37, 78, 78);
+    border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -13,7 +14,7 @@
 .book-data {
     padding: 5px;    
     border: 2px solid rgb(37, 78, 78);
-    background-color: #7AB2B2;
+    background-color: #3d616f;
     height: 60%;
 
     display: flex;
@@ -50,7 +51,7 @@
 }
 
 #update-btn{
-    background-color: #3C5B6F;
+    background-color: #395B64;
     color: #3e0404;
     border-radius: 5px;
 }
@@ -60,7 +61,7 @@
     padding: 5px;    
     border: 2px solid black;
     height: 60%;
-    background-color: #7AB2B2;
+    background-color: #395B64;
     display: flex;
     align-items: center;
     padding-left: 10px;

@@ -3,6 +3,7 @@
     width: 70vw;
     margin-top: 15px;
     margin-bottom: 15px;
+   
     
     
 }
@@ -14,10 +15,13 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: #4D869C;
+    border-radius: 5px;
 }
 
 #add-btn{
     height: 40%;
     width: 5%;
-    background-color: goldenrod;
+    background-color: #3C5B6F;
+    color: #3e0404;
+    border-radius: 5px;
 }
