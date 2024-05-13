@@ -3,6 +3,7 @@ import Book from "./components/Book";
 import "./App.css";
 import AddBook from './components/AddBook';
 import Navbar from './components/Navbar';
+import useFetch from './useFetch';
 
 
 
@@ -15,51 +16,34 @@ function App(){
   let[enterPrice, setEnterPrice] = useState("");
 
 
-  let [books, setBooks] = useState(
+  let [books, setBooks] = useState(null);
+  let {error} = useFetch('http://localhost:8000/books', setBooks);
 
-   [
-      {
-        id: 1,
-        title: "Family Matters",
-        author: "Rohinton Mistry",
-        price: 125
-      },
-     
-      {
-        id: 2,
-        title: " A Suitable Boy",
-        author: "Vikram Seth",
-        price: 108
-      },
-    
-      {
-        id: 3,
-        title: "Harry Potter",
-        author: "J. K. Rowling",
-        price: 180
-      },
-    
-      {
-        id: 4,
-        title: "Learning How to Fly",
-        author: "Abdul Kalam",
-        price: 199
-      },
-    ]
-  );
+
+  fetch('http://localhost:8000/books')
+  .then((response)=>{
+    return response.json();
+  }).then((data)=>{
+    setBooks(data);
+    console.log(data);
+  })
+
+
 
 
   function handleRemove(id){
+    /*
    let newBooks = books.filter(
     (element)=>{
       return element.id!=id;
     }
-   )
-   setBooks(newBooks)
+   
+   setBooks(newBooks)*/
   }
 
 
   function handleSubmit(event){
+    /*
      event.preventDefault();
 
      let book = {
@@ -72,6 +56,7 @@ function App(){
      newBooks.push(book);
 
      setBooks(newBooks);
+     */
   }
 
   return(
@@ -88,6 +73,7 @@ function App(){
     />     
 
    {
+     !error ? books &&
      books.map(
         (element)=>{
           return <Book 
@@ -99,7 +85,7 @@ function App(){
           handleRemove={handleRemove} />
         }
      )
-   }
+    }
     </div>
   );
 }
