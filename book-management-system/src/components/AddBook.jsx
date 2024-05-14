@@ -5,19 +5,19 @@ import "./AddBook.css";
 function AddBook(props) {
 
     function handleChangeId(event){
-        props.setEnterId(event.target.value);
+        props.setEnteredId(event.target.value);
     }
 
     function handleChangeTitle(event){
-        props.setEnterTitle(event.target.value);
+        props.setEnteredTitle(event.target.value);
     }
 
     function handleChangeAuthor(event){
-        props.setEnterAuthor(event.target.value);
+        props.setEnteredAuthor(event.target.value);
     }
 
     function handleChangePrice(event){
-        props.setEnterPrice(event.target.value);
+        props.setEnteredPrice(event.target.value);
     }
     
 
@@ -27,11 +27,11 @@ function AddBook(props) {
 
     <div className='form-container'>
 
-      <form className='form-div' onSubmit={props.handleSubmit} >
-       Id:<input type='text' id='id' onChange={handleChangeId}/>
-       Title:<input type='text' id='id' onChange={handleChangeTitle}/>
-       Author:<input type='text' id='id' onChange={handleChangeAuthor}/>
-       Price:<input type='text' id='id' onChange={handleChangePrice}/>
+      <form className='form-div' onSubmit={props.handleSubmit}  >
+       Id:<input type='text' id='id' onChange={handleChangeId} value={props.enteredId}/>
+       Title:<input type='text' id='id' onChange={handleChangeTitle} value={props.enteredTitle}/>
+       Author:<input type='text' id='id' onChange={handleChangeAuthor} value={props.enteredAuthor}/>
+       Price:<input type='text' id='id' onChange={handleChangePrice} value={props.enteredPrice}/>
 
        <input type="submit" value="Add" id="add-btn" />
 
