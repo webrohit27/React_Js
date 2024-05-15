@@ -1,45 +1,42 @@
-import React from 'react'
-import "./AddBook.css";
+import React from 'react';
+import './AddBook.css';
 
+function AddBook(props){
 
-function AddBook(props) {
-
-    function handleChangeId(event){
+    function handleChangeId(event) {
         props.setEnteredId(event.target.value);
     }
 
-    function handleChangeTitle(event){
+    function handleChangeTitle(event) {
         props.setEnteredTitle(event.target.value);
     }
 
-    function handleChangeAuthor(event){
+    function handleChangeAuthor(event) {
         props.setEnteredAuthor(event.target.value);
     }
 
-    function handleChangePrice(event){
+    function handleChangePrice(event) {
         props.setEnteredPrice(event.target.value);
     }
-    
 
 
+    return (
+        <div className="form-container">
 
-  return (
+            <form className='form-div' onSubmit={props.handleSubmit}>
+                
+                <span id='inner-container'>
+                    <span id='label-id' className='input-labels'> id:</span><input type = "text" id="id" className='input-field' onChange={handleChangeId} value={props.enteredId}></input>
+                    <span id='label-title' className='input-labels'> Title:</span> <input type = "text" id="title" className='input-field' onChange={handleChangeTitle} value={props.enteredTitle} ></input>
+                    <span id='label-author' className='input-labels'> Author:</span><input type = "text" id="author" className='input-field' onChange={handleChangeAuthor} value={props.enteredAuthor}></input>
+                    <span id='label-price' className='input-labels'> Price:</span> <input type = "text" id="price" className='input-field' onChange={handleChangePrice} value={props.enteredPrice}></input>
 
-    <div className='form-container'>
-
-      <form className='form-div' onSubmit={props.handleSubmit}  >
-       Id:<input type='text' id='id' onChange={handleChangeId} value={props.enteredId}/>
-       Title:<input type='text' id='id' onChange={handleChangeTitle} value={props.enteredTitle}/>
-       Author:<input type='text' id='id' onChange={handleChangeAuthor} value={props.enteredAuthor}/>
-       Price:<input type='text' id='id' onChange={handleChangePrice} value={props.enteredPrice}/>
-
-       <input type="submit" value="Add" id="add-btn" />
-
-
-
-      </form>
-    </div>
-  )
+                    <input type="submit" value="add" id="add-btn"/>
+                </span>
+            
+            </form>
+        </div>  
+    );
 }
 
 export default AddBook;
