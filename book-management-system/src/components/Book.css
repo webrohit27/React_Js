@@ -1,26 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
 #book-container{
-    height: 10vh;
-    width: 70vw;
-    background-color: #4D869C;
-    border: 2px solid rgb(37, 78, 78);
-    border-radius: 5px;
+    height: 12vh;
+    width: 80vw;
+    background-color: #CDE8E5;
+
+    border: 2px solid black;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+
+    transition-timing-function: linear;
+    transition-duration: 0.2s;
     
-   
+}
+
+#book-container:hover{
+    transform: scale(1.01);
+    background-color: #bce8e4;
 }
 
 .book-data {
     padding: 5px;    
-    border: 2px solid rgb(37, 78, 78);
-    background-color: #3d616f;
-    border-radius: 5px;
-    height: 60%;
+    border: 2px solid black;
+    background-color: #EEF7FF;
+    height: 45%;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 17px;
 
     display: flex;
     align-items: center;
     padding-left: 10px;
+
+    border: none;
+    border-radius: 10px;
+
 }
 
 #container-data1 {
@@ -40,46 +61,60 @@
 }
 
 .btn{
-    height: 40%;
-    width: 7%; 
-    color: black;
+    height: 43%;
+    width: 7%;
+    background-color: red;
+    color: white;
+
+    font-size: 15px;
 }
 
-#remove-btn{
-    background-color: #3C5B6F;
-    color: #3e0404;
-    border-radius: 5px;
+#remove-btn {
+    background-color: #ff4747;
+    border: none;
+    border-radius: 6px;
+
+    transition-timing-function: linear;
+    transition-duration: 0.2s;
 }
 
-#update-btn{
-    background-color: #395B64;
-    color: #3e0404;
-    border-radius: 5px;
+#remove-btn:hover{
+    transform: scale(1.05);
 }
 
+#update-btn {
+    background-color: #1ec85b;
+    border: none;
+    border-radius: 6px;
+    transition-timing-function: linear;
+    transition-duration: 0.2s;
+}
 
-.input-data {
-    padding: 5px;    
-    border: 2px solid black;
-    height: 60%;
-    background-color: #395B64;
-    display: flex;
-    align-items: center;
+#update-btn:hover {
+    transform: scale(1.05);
+}
+.input-data{
+    height: 45%;
+    border: none;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 17px;
+
     padding-left: 10px;
+    border-radius: 10px;
 }
 
 #input-data1{
     width: 4%;
 }
-
-#input-data2 {
+#input-data2{
     width: 25%;
 }
 
-#input-data3 {
+#input-data3{
     width: 20%;
 }
 
-#input-data4 {
+#input-data4{
     width: 8%;
 }

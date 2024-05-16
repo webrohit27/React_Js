@@ -1,17 +1,13 @@
-import React from 'react';
-
-import {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Book from './components/Book';
 import AddBook from './components/AddBook';
 import useFetch from './useFetch';
 
 
+
 function App() {
 
-    let[enteredId, setEnteredId] = useState("");
-    let[enteredTitle, setEnteredTitle] = useState("");
-    let[enteredAuthor, setEnteredAuthor] = useState("");
-    let[enteredPrice, setEnteredPrice] = useState("");
+   
 
     let[books, setBooks] = useState(null);
 
@@ -92,71 +88,31 @@ useEffect(() => {
         });
     }   
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        let book = {
-                      id: enteredId,
-                      title: enteredTitle,
-                      author: enteredAuthor,
-                      price: enteredPrice
-                   }
-
+    function handleSubmit(book) {
         fetch('http://localhost:8000/books', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(book)
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(book)
         })
-        .then(()=>{
-            let newBooks = [...books];
-            newBooks.push(book);
-            setBooks(newBooks); 
-
-            setEnteredId("");
-            setEnteredTitle("");
-            setEnteredAuthor("");
-            setEnteredPrice(""); 
-        })
+            .then(() => {
+                let newBooks = [...books];
+                newBooks.push(book);
+                setBooks(newBooks);
+            })
+            .catch(error => {
+                console.error('Error adding book:', error);
+            });
+    }
 
         
-
-    /*
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Failed to add book');
-        }
-        return response.json();
-    })
-    .then(book => {
-        console.log('Book added successfully:', book);
-        let newBooks = [...books];
-        newBooks.push(book);
-        setBooks(newBooks);
-
-    })
-    .catch(error => {
-        // Handle error
-        console.error('Error adding book:', error);
-    });
-    */
-    }
 
     return(
         <div id="main-container">
             
-            <AddBook  
-                handleSubmit={handleSubmit} 
-                setEnteredId={setEnteredId} 
-                setEnteredTitle={setEnteredTitle} 
-                setEnteredAuthor={setEnteredAuthor} 
-                setEnteredPrice={setEnteredPrice}
-                enteredId={enteredId}
-                enteredTitle={enteredTitle}
-                enteredAuthor={enteredAuthor}
-                enteredPrice={enteredPrice}
-                >
-            </AddBook>
+            <AddBook handleSubmit={handleSubmit} />
+            
             {   
                 !error ? books &&                                         // to make sure book is not null
                 books.map(
