@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { useState } from 'react';
 import './Book.css';
 
@@ -14,36 +16,37 @@ function Book(props){
 
     // isUpdating variable = false
     // now isUpdating is true
-    function handleUpdate(){
-        let book;
-
-        if(isUpdating == true) {
-            book = {
-                        id: updatedId,
-                        title: updatedTitle,
-                        author: updatedAuthor,
-                        price: updatedPrice
-                    }
-
-                    let newBooks = [...props.books];
-
-                    newBooks.map(
-                        (element, idx)=>{
-                            if(element.id == book.id) {
-                                newBooks.splice(idx, 1, book);
-                            }
-                        }
-                    )
-            
-                    props.setBooks(newBooks);
-                    setIsUpdating(false);
-        }   
-        else{
+    function handleUpdate() {
+        if (!isUpdating) {
             setIsUpdating(true);
+            return;
         }
-
-       
+    
+        const updatedBook = {
+            id: updatedId,
+            title: updatedTitle,
+            author: updatedAuthor,
+            price: updatedPrice
+        };
+    
+        fetch(`http://localhost:8000/books/${updatedId}`, {
+            method: 'PUT', // or 'PATCH' depending on your API
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedBook)
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to update book');
+            // Update local state with the updated book data
+            const updatedBooks = props.books.map(book => 
+                book.id === updatedId ? updatedBook : book
+            );
+            props.setBooks(updatedBooks);
+            setIsUpdating(false);
+        })
+        .catch(error => console.error('Error updating book:', error));
     }
+    
+    
 
     function handleIdChange(event) {
         setUpdatedId(event.target.value);
