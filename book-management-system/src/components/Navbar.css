@@ -1,32 +1,30 @@
-
-
-
-.header{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 10px; /* Space between the header and the navigation list */
-    font-variant: small-caps;
-    font-weight: 500;
+.navbar {
+    height: 10vh;
+    background-color: #4D869C!important;
+    margin-top: 20px;
+    width: 80vw;
+    border-radius: 20px;
 }
 
-.line{
-    border-top: 2px solid #000;
-    margin: 0 auto; /* Center the line */
-    width: 80%; /* Adjust the width as needed */
+.navbar .container-fluid {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
 }
 
-.nav-section {
-    list-style-type: none; /* Remove default list styling */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-around; /* Evenly distribute space between items */
-    padding: 0; /* Remove default padding */
-  }
-  
-  .nav-section li {
-    cursor: pointer; /* Change cursor to pointer on hover */
-  }
-  
-  .nav-section li:hover {
-    color: #ddd; /* Lighten the text color on hover */
-  }
+.container-fluid .navbar-brand {
+    color: whitesmoke;
+    width: 100%;
+    margin-right: 55%;
+
+}
+
+.navbar .navbar-nav .nav-link {
+    color: whitesmoke;
+    font-size: 20px;
+}
+.navbar .navbar-nav .nav-item {
+    margin-right: 30px; /* Increase the right margin to create space between navbar items */
+}
+
