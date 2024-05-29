@@ -1,0 +1,58 @@
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --body-color: #ffffff;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none !important; 
+}
+body {
+    font-family: 'Roboto', sans-serif ;
+    background-color: var(--body-color);
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: auto;
+    /* padding: 50px 30px; */
+/* border: 1px solid; */
+}
+
+.card-details{
+    width: 18rem;
+    /* border: 1px solid red; */
+    padding: 1%;
+    margin: 1%;
+box-shadow: 0 0 5px #80808091;
+border-radius: 10px;
+background-color: rgb(231, 240, 252);
+}
+
+.contact-img{
+    height: 420px;
+    width: 420px;
+    background-image: url("./images/about.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-img{
+    height: 420px;
+    width: 420px;
+    background-image: url("./images/home.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* ..................................................................................  */

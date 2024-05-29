@@ -56,7 +56,7 @@ function changeHandler(event){
             <Link>
             to="#"
             <p> 
-                Forget password
+                Forget Password
             </p>
             </Link>
         </label>

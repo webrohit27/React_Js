@@ -1,0 +1,16 @@
+.table-container, .contact-containe{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid; */
+  height: auto;
+  margin-top: 6rem;
+}
+
+
+.user-table{
+  /* padding: 1%; */
+  width: 100%;
+
+}
+

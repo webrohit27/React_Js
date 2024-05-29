@@ -1,0 +1,19 @@
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --grey-color: rgba(229, 229, 229, 0.162);
+  }
+
+.login-img{
+        height: 400px;
+    width: 400px;
+    background-image: url("../images/login.png");
+    background-repeat: no-repeat;
+    background-position:  center;
+    background-size: cover;
+}
+
+
+/* ...................................................................................  */
+
+
