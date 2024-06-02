@@ -7,6 +7,7 @@ const SignupForm = () => {
         <h1>Please sign up Here</h1>
         <Routes>
           <Route>About</Route>
+          <Route>Home</Route>
         </Routes>
     </div>
   )
