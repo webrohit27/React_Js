@@ -8,6 +8,7 @@ const SignupForm = () => {
         <Routes>
           <Route>About</Route>
           <Route>Home</Route>
+          <Route>Contact</Route>
         </Routes>
     </div>
   )
