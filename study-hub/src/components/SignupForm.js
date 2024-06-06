@@ -10,6 +10,7 @@ const SignupForm = () => {
           <Route>Home</Route>
           <Route>Contact</Route>
           <Route>Work</Route>
+          <Route>Work</Route>
         </Routes>
     </div>
   )
