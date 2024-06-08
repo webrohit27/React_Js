@@ -11,6 +11,7 @@ const SignupForm = () => {
           <Route>Contact</Route>
           <Route>Work</Route>
           <Route>Footer</Route>
+          <Route>SideBardes</Route>
         </Routes>
     </div>
   )
