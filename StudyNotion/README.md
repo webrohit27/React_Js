@@ -1,5 +1,4 @@
-# StudyNotion Online Education Platform (MERN App) [Website Link](https://study-notion-v10-191dvsnat-setus-projects.vercel.app/)
-
+# StudyNotion Online Education Platform (MERN App) 
 
 
 ## Project Description
